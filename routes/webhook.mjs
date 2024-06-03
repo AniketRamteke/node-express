@@ -26,6 +26,8 @@ webhookRouter.post("/", async (req, res) => {
   }
 
   fs.writeFileSync(filePath, jsonData, "utf8");
+
+  res.send();
 });
 
 export { webhookRouter };
