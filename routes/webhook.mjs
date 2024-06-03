@@ -12,6 +12,8 @@ webhookRouter.post("/", async (req, res) => {
     webhookData: { headers: req.headers, body: req.body },
   });
 
+  console.log(req.body);
+
   const __dirname = path.resolve();
 
   const directoryPath = path.join(__dirname, "webhook_data");
@@ -23,7 +25,7 @@ webhookRouter.post("/", async (req, res) => {
     fs.mkdirSync(directoryPath, { recursive: true });
   }
 
-  fs.writeFileSync(filePath, jsonData, "utf8");
+  fs.writeFileSync(filePath, jsonData);
 
   res.send();
 });
