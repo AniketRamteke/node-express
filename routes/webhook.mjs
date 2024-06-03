@@ -8,11 +8,9 @@ const webhookRouter = Router();
 webhookRouter.post("/", async (req, res) => {
   // res.send({ webhookData: { headers: req.headers, body: req.body } });
 
-  const jsonData = JSON.stringify(
-    { webhookData: { headers: req.headers, body: req.body } },
-    null,
-    2
-  );
+  const jsonData = JSON.stringify({
+    webhookData: { headers: req.headers, body: req.body },
+  });
 
   const __dirname = path.resolve();
 
